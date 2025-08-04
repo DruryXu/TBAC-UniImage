@@ -1,0 +1,10 @@
+diffusers
+torchmetrics[image]==1.6.3
+numpy==1.26.4
+gradio
+pycocotools
+evaluate
+tabulate
+piq
+sentencepiece
+bitsandbytes
