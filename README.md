@@ -13,23 +13,24 @@ Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://hu
 | MetaQuery | Qwen2.5-VL-3B-Instruct | 0.78 | 81.10 |
 | | Qwen2.5-VL-7B-Instruct | 0.80 | 82.05 |
 | BILP-3o | Qwen2.5-VL-3B-Instruct | 0.81 | 79.36 |
-| | Qwen2.5-VL-7B-Instruct | 0.84 | 81.60 |
+| | Qwen2.5-VL-7B-Instruct | 0.83 | 80.73 |
 | BAGEL | MoT-7B | 0.82 | - |
 | Show-o2 | Qwen2.5-1.5B-Instruct | 0.73 | 85.02 |
 | | Qwen2.5-7B-Instruct | 0.76 | 86.14 |
+| Qwen-Image | Qwen2.5-VL-7B-Instruct | 0.87 | 88.32
 | **Ours** | **Qwen2.5-VL-3B-Instruct** | **0.87** | 81.00 |
 
 ## Inference
-
 ```bash
 pip install -r requirements.txt
 python app.py --checkpoint_path TencentBAC/TBAC-UniImage-3B
 ```
 
-## Acknowledgements
+## Limitations
+For a better experience, please use the text-to-image mode. The image-text-to-image capability is currently weaker (but you can still try it).
 
+## Acknowledgements
 The training and inference codes are modified from [MetaQuery](https://github.com/facebookresearch/metaquery). We thank them for their contribution!
 
 ## About
-
 Created by the Tencent PCG Basic Algorithm Center. All rights reserved.
