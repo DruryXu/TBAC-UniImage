@@ -1,0 +1,33 @@
+_gradient_checkpointing: True
+vae_id: "Efficient-Large-Model/Sana_1600M_512px_diffusers"
+noise_scheduler_id: "Efficient-Large-Model/Sana_1600M_512px_diffusers"
+scheduler_id: "Efficient-Large-Model/Sana_1600M_512px_diffusers"
+mllm_id: "Qwen/Qwen2.5-VL-3B-Instruct"
+diffusion_model_id: "Efficient-Large-Model/Sana_1600M_512px_diffusers"
+vae_downsample_f: 32
+in_channels: 32
+target_image_size: 512
+per_device_train_batch_size: 16
+learning_rate: 0.0001
+eval_steps: 1000
+save_steps: 1000
+warmup_steps: 5000
+max_steps: 150000
+lr_scheduler_type: "cosine_with_min_lr"
+lr_scheduler_kwargs:
+  min_lr: 0.00001
+loss_type: "flow"
+num_metaqueries: 64
+modules_to_freeze:
+  - "vae"
+  - "model.mllm_backbone"
+
+modules_to_unfreeze:
+  - "model.mllm_backbone.model.embed_tokens"
+
+deepspeed: "configs/zero2.json"
+
+train_datasets:
+  blip3o: -1
+
+report_to: "tensorboard"

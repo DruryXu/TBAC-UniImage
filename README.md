@@ -1,5 +1,7 @@
 # TBAC-UniImage-3B
 
+[Arxiv](https://arxiv.org/abs/2508.08098) | [Huggingface](https://huggingface.co/TencentBAC/TBAC-UniImage-3B)
+
 ![QualiRes](./assets/qualitative_results.jpg)
 
 ## Overview
@@ -8,6 +10,9 @@ This repository contains the official model checkpoints of **TBAC-UniImage-3B**,
 Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) serves as the understanding module, while the [SANA-1600M](https://huggingface.co/Efficient-Large-Model/Sana_1600M_512px_diffusers) acts as the generation module. The conditions for generation are originate from representations of different Qwen2.5-VL-3B-Instruct layers.
 
 ![Model](./assets/model.png)
+
+## Update
+2025.8.13 Released training code.
 
 ## Performance
 
@@ -24,16 +29,24 @@ Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://hu
 | Tar | Qwen2.5-1.5B-Instruct | 0.76 | 82.96
 | | Qwen2.5-7B-Instruct | 0.84 | 84.65 |
 | Qwen-Image | Qwen2.5-VL-7B-Instruct | 0.87 | 88.32
-| **Ours** | **Qwen2.5-VL-3B-Instruct** | **0.87** | 81.00 |
+| **Ours** | **Qwen2.5-VL-3B-Instruct** | **0.87** | 80.97 |
 
 ### TIIF-Bench
 
 ![TIIF](./assets/tiif_bench.png)
 
-## Inference
+## Installation
 ```bash
 pip install -r requirements.txt
+```
+
+## Quick Start
+```bash
+## Inference
 python app.py --checkpoint_path TencentBAC/TBAC-UniImage-3B
+
+## Train
+sh train.sh
 ```
 
 ## Limitations

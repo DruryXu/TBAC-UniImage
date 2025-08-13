@@ -88,7 +88,7 @@ if __name__ == "__main__":
         _gradient_checkpointing=False,
         torch_dtype=torch.bfloat16,
     )
-    pipeline = pipeline.to(device="npu", dtype=torch.bfloat16)
+    pipeline = pipeline.to(device="cuda", dtype=torch.bfloat16)
 
     with gr.Blocks(fill_width=True) as demo:
         with gr.Row():
