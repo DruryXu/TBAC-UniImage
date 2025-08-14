@@ -42,7 +42,7 @@ Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://hu
 
 ## Image Editing Performance
 
-The input image is processed by the Qwen2.5-VL image encoder and then fed into the MLLM along with text and learnable queries. We use only the learnable queries, which have fused the multimodal information, as the generative condition, without directly incorporating any image VAE representations like other works. Despite this, the model still achieves promising multimodal understanding and consistency performance in Image Editing tasks.
+The input image is processed by the Qwen2.5-VL image encoder and then fed into the MLLM along with text and learnable queries. We use only the learnable queries, which have fused the multimodal information, as the generative condition, without directly incorporating any image VAE representations like other works. Despite this, the model still achieves promising multimodal understanding and consistency performance in Image Editing tasks. This accomplishment validates the feasibility of high-fidelity image editing using only the intrinsic features of an MLLM, without external generative priors.
 
 ### Qualitative Results
 ![t2i](./assets/ti2i.png)
