@@ -2,7 +2,7 @@
 
 [Arxiv](https://arxiv.org/abs/2508.08098) | [Huggingface](https://huggingface.co/TencentBAC/TBAC-UniImage-3B)
 
-![QualiRes](./assets/qualitative_results.jpg)
+![Teaser](./assets/teaser.jpg)
 
 ## Overview
 This repository contains the official model checkpoints of **TBAC-UniImage-3B**, an unified understanding and generation model developed by Basic Algorithm Center, Platform and Content Group, Tencent.
@@ -12,9 +12,18 @@ Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://hu
 ![Model](./assets/model.png)
 
 ## Update
+2025.8.14 Update Image-Text-to-Image results.
+
 2025.8.13 Released training code.
 
 ## Performance
+
+### Qualitative Results for Text-to-Image Task
+![t2i](./assets/t2i.png)
+
+### Qualitative Results for Image-Text-to-Image Task
+![t2i](./assets/ti2i.png)
+**The input image is processed by the Qwen2.5-VL image encoder and then fed into the MLLM along with text and learnable queries. We use only the learnable queries, which have fused the multimodal information, as the generative condition, without directly incorporating any image VAE representations like other works. Despite this, the model still achieves promising multimodal understanding and consistency performance in Image-Text-to-Image tasks.**
 
 ### GenEval and DPG-Bench
 | Method | Base (M)LLM | GenEval | DPG-Bench |
@@ -35,6 +44,10 @@ Our model is composed of two components: the [Qwen2.5-VL-3B-Instruct](https://hu
 
 ![TIIF](./assets/tiif_bench.png)
 
+### ImgEdit
+
+![ImgEdit](./assets/imgedit.png)
+
 ## Installation
 ```bash
 pip install -r requirements.txt
@@ -48,9 +61,6 @@ python app.py --checkpoint_path TencentBAC/TBAC-UniImage-3B
 ## Train
 sh train.sh
 ```
-
-## Limitations
-For a better experience, please use the text-to-image mode. The image-text-to-image capability is currently weaker (but you can still try it).
 
 ## Acknowledgements
 The training and inference codes are modified from [MetaQuery](https://github.com/facebookresearch/metaquery). We thank them for their contribution!
